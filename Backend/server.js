@@ -44,17 +44,6 @@ app.use('/api/projects', taskRoutes);
 app.use('/api/tasks', taskRoutes);
 
 
-// 🔹 Statische React-Dateien bereitstellen (nach Build von React)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// 🔹 Alle nicht erkannten API-Routen abfangen
-app.get('*', (req, res) => {
-    if (req.originalUrl.startsWith('/api/')) {
-        return res.status(404).json({ error: "API-Route nicht gefunden" });
-    }
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // 🔹 Server starten
 const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => {
