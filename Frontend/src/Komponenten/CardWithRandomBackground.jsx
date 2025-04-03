@@ -2,9 +2,9 @@
 import React from 'react';
 
 const backgroundImages = [
-  '/images/one.jpg',
-  '/images/two.jpg',
-  '/images/three.jpg'
+  '/Images/one.jpg',
+  '/Images/two.jpg',
+  '/Images/three.jpg'
 ];
 
 const getRandomImage = () =>
